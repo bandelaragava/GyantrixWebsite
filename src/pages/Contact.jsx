@@ -41,7 +41,7 @@ const Contact = () => {
                         <div className="contact-small">
                             <div className="contact-item">
                                 <i className="fas fa-envelope"></i>
-                                <span>support@gyantrix.com</span>
+                                <span>support@gyantrixacademy.com</span>
                             </div>
                             <div className="contact-item">
                                 <i className="fas fa-phone-alt"></i>

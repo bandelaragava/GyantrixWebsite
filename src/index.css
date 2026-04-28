@@ -1225,117 +1225,96 @@ form button {
 /* Consolidated mobile styles have been moved to the end of the file */
 
 
-.acrdt {
+.acrdt-dual {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
   background-color: white;
-  padding: 1rem;
-  margin-top: 0.5rem;
-
+  padding: 1.2rem 5%;
+  margin-top: 1rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(59, 198, 248, 0.1);
 }
 
-.acrdt p {
+.acrdt-column {
+  flex: 1;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5rem;
+}
+
+.acrdt-column h3 {
   color: #3bc6f8;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
   text-align: center;
-  font-size: 1.7rem;
-  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.logo-slider {
-  overflow: hidden;
-  white-space: nowrap;
+.logo-static-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
   width: 100%;
-  background: #fff;
-  padding: 50px 0;
-  box-sizing: border-box;
 }
 
-/* Inner track that moves */
-/* 
-   Accreditation Section - Pixel-Perfect Infinite Scroll
-   Each logo box is exactly 250px. 6 logos = 1500px total set width.
-*/
-.acrdt .logo-track {
-  display: flex !important;
-  align-items: center !important;
-  width: max-content !important;
-  will-change: transform;
-  animation: acrdtNonStopScroll 20s linear infinite !important;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  gap: 0 !important;
-}
-
-.acrdt .logos {
-  flex: 0 0 250px !important;
-  width: 250px !important;
-  height: 120px;
+.logo-item-static {
+  width: 150px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1.5rem;
-  /* Internal spacing doesn't affect track width due to fixed flex-basis */
-  margin: 0 !important;
-}
-
-.acrdt .logos img {
-  height: 8.5rem;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
   transition: transform 0.3s ease;
-  filter: grayscale(0.1);
 }
 
-.acrdt .logos img:hover {
-  transform: scale(1.08);
+.logo-item-static img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(0.2);
+  transition: all 0.4s ease;
+}
+
+.logo-item-static:hover img {
+  transform: scale(1.15);
   filter: grayscale(0);
 }
 
-@keyframes acrdtNonStopScroll {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(-1500px, 0, 0);
-    /* Exactly 6 logos × 250px */
-  }
+.acrdt-divider {
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, #3bc6f8, transparent);
+  margin: 0 1rem;
 }
 
 @media (max-width: 992px) {
-  .acrdt .logos {
-    flex: 0 0 180px !important;
-    width: 180px !important;
+  .acrdt-column {
+    min-width: 100%;
   }
 
-  @keyframes acrdtNonStopScroll {
-    0% {
-      transform: translate3d(0, 0, 0);
-    }
-
-    100% {
-      transform: translate3d(-1080px, 0, 0);
-    }
-
-    /* 6 × 180px */
+  .acrdt-divider {
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #3bc6f8, transparent);
+    margin: 1rem 0;
   }
 }
 
-@media (max-width: 600px) {
-  .acrdt .logos {
-    flex: 0 0 150px !important;
-    width: 150px !important;
+@media (max-width: 480px) {
+  .logo-item-static {
+    width: 120px;
+    height: 80px;
   }
 
-  @keyframes acrdtNonStopScroll {
-    0% {
-      transform: translate3d(0, 0, 0);
-    }
-
-    100% {
-      transform: translate3d(-900px, 0, 0);
-    }
-
-    /* 6 × 150px */
+  .acrdt-column h3 {
+    font-size: 1.2rem;
   }
 }
 
@@ -4950,7 +4929,7 @@ form button {
 
 /* Testimonials */
 .testimonials {
-  background: #2b138e;
+  /* background: #2b138e; */
   color: #66D6FF;
   text-align: center;
   padding: 60px 10%;

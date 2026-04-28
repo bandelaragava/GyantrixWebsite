@@ -184,29 +184,36 @@ const Home = () => {
 
 
 
-            <section className="acrdt">
-                <p>We are Collaborated & Accredited by <span style={{ fontSize: '0.6em', fontWeight: 'normal', opacity: 0.8 }}>(yet to)</span></p>
-                <div className="logo-slider">
-                    <div className="logo-track">
-                        {[
-                            { src: "/images/nsdclogo.jpg", alt: "NSDC" },
-                            { src: skillIndiaLogo, alt: "Skill India", isImported: true },
-                            { src: "/images/MCA.png", alt: "MCA" },
-                            { src: msmeLogo, alt: "MSME", isImported: true },
-                            { src: isoLogo, alt: "ISO", isImported: true },
-                            { src: "/images/nasscom1.png", alt: "NASSCOM" }
-                        ].concat([
-                            { src: "/images/nsdclogo.jpg", alt: "NSDC" },
-                            { src: skillIndiaLogo, alt: "Skill India", isImported: true },
-                            { src: "/images/MCA.png", alt: "MCA" },
-                            { src: msmeLogo, alt: "MSME", isImported: true },
-                            { src: isoLogo, alt: "ISO", isImported: true },
-                            { src: "/images/nasscom1.png", alt: "NASSCOM" }
-                        ]).map((logo, index) => (
-                            <div key={index} className="logos">
-                                <img src={logo.isImported ? logo.src : getAssetUrl(logo.src)} alt={logo.alt} />
-                            </div>
-                        ))}
+            <section className="acrdt-dual">
+                <div className="acrdt-column">
+                    <h3>We are Collaborated & Accredited by</h3>
+                    <div className="logo-static-grid">
+                        <div className="logo-item-static">
+                            <img src={getAssetUrl("/images/MCA.png")} alt="MCA" />
+                        </div>
+                        <div className="logo-item-static">
+                            <img src={msmeLogo} alt="MSME" />
+                        </div>
+                        <div className="logo-item-static">
+                            <img src={isoLogo} alt="ISO" />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="acrdt-divider"></div>
+
+                <div className="acrdt-column">
+                    <h3>Yet to Accredited by</h3>
+                    <div className="logo-static-grid">
+                        <div className="logo-item-static">
+                            <img src={getAssetUrl("/images/nsdclogo.jpg")} alt="NSDC" />
+                        </div>
+                        <div className="logo-item-static">
+                            <img src={skillIndiaLogo} alt="Skill India" />
+                        </div>
+                        <div className="logo-item-static">
+                            <img src={getAssetUrl("/images/nasscom1.png")} alt="NASSCOM" />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -635,13 +642,13 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <h3 className="feature-title">Featured In</h3>
+                {/* <h3 className="feature-title">Featured In</h3>
                 <div className="feature-logos">
                     {Array(4).fill(['thehindunewspaper.png', 'TV5.jpg', 'hmtv.png', 'eenadu.jpg', 'v6.jpeg', 'hansindia.jpg', 'andhrajyothy.png', 'adhabhyd.png', 'dailyhunt.jpeg', 'lokal.jpg', 'teluguprabha.jpeg', 'manatg.jpeg', 'tnews.jpg', 'metroudayam.jpeg', 'TheDaily.jpeg']).flat()
                         .map((img, idx) => (
                             <img key={`${img}-${idx}`} src={getAssetUrl(`/images/${img}`)} alt={img} />
                         ))}
-                </div>
+                </div> */}
             </section >
 
             {/* Connect Section */}
@@ -682,7 +689,7 @@ const Home = () => {
                         <div className="contact-small">
                             <div className="contact-item">
                                 <i className="fas fa-envelope"></i>
-                                <span>support@gyantrix.com</span>
+                                <span>support@gyantrixacademy.com</span>
                             </div>
                             <div className="contact-item">
                                 <i className="fas fa-phone-alt"></i>

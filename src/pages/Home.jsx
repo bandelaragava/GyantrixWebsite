@@ -185,7 +185,7 @@ const Home = () => {
 
 
             <section className="acrdt">
-                <p>We are Collaborated & Accredited by</p>
+                <p>We are Collaborated & Accredited by <span style={{ fontSize: '0.6em', fontWeight: 'normal', opacity: 0.8 }}>(yet to)</span></p>
                 <div className="logo-slider">
                     <div className="logo-track">
                         {[
@@ -686,7 +686,7 @@ const Home = () => {
                             </div>
                             <div className="contact-item">
                                 <i className="fas fa-phone-alt"></i>
-                                <span>+91 73868 79818</span>
+                                <span>+91 9247551330</span>
                             </div>
                         </div>
                     </div>

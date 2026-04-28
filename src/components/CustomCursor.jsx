@@ -63,7 +63,7 @@ const CustomCursor = () => {
         const animate = () => {
             // physics constants (damping)
             const dotDamp = 0.35;
-            const ringDamp = 0.12;
+            const ringDamp = 0.35;
             const glowDamp = 0.04;
 
             // Update Positions

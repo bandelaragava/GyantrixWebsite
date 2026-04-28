@@ -2,24 +2,26 @@
 .navbar nav {
     display: flex;
     align-items: center;
-    gap: 0.3rem;
-
+    gap: 1.2rem;
 }
 
 .navbar nav>* {
     min-width: auto;
-
     text-align: center;
 }
 
-.navbar nav a,
-.navbar nav>.dropdown {
+.navbar nav > a:not(.nav-highlight-btn),
+.navbar nav > .dropdown {
     margin: 0 !important;
 }
 
-.dropdown .drop-btn,
+.dropdown .drop-btn {
+    padding: 0.4rem 0 !important;
+    margin: 0 !important;
+}
+
 .dropdown .dropdown-content a {
-    padding: 0.4rem 0.2rem !important;
+    padding: 0.7rem 1.2rem !important;
     margin: 0 !important;
 }
 
@@ -119,7 +121,7 @@
 }
 
 .navbar nav a {
-    margin: 0 0.5rem;
+    margin: 0;
 
     color: #333;
     text-decoration: none;
@@ -189,7 +191,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.3rem;
     width: 100%;
 }
 
@@ -198,7 +200,7 @@
     border: none;
     color: inherit;
     cursor: pointer;
-    padding: 8px 12px;
+    padding: 8px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -522,10 +524,7 @@
     }
 }
 
-.dropdown .drop-btn {
-    padding: 0.7rem 1.2rem;
-}
-
+/* Legacy padding removed for uniform spacing */
 .dropdown .dropdown-content a {
     padding: 0.7rem 1.2rem;
     margin: 0 !important;

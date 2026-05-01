@@ -17,13 +17,18 @@
     background: #ffffff;
     width: 95%;
     max-width: 550px;
+    /* Fixed layout with scrollbar if needed */
+    height: auto;
+    min-height: 450px;
     max-height: 90vh;
     border-radius: 20px;
     padding: 30px;
     position: relative;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    overflow-y: auto;
+    overflow-y: auto; /* Re-enabled scrollbar */
     border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
 }
 
 .popup-container::before {
@@ -77,6 +82,10 @@
 .close-btn:hover {
     background: #e64520;
     color: white;
+}
+
+.popup-body {
+    flex: 1;
 }
 
 .popup-body p {
@@ -137,7 +146,7 @@
 .popup-footer {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .understand-btn {
@@ -159,10 +168,11 @@
     transform: translateY(-2px);
 }
 
-/* Scrollbar styling for long content on small screens */
+/* Custom scrollbar for better UI */
 .popup-container::-webkit-scrollbar {
-    width: 4px;
+    width: 6px;
 }
+
 .popup-container::-webkit-scrollbar-thumb {
     background: #e2e8f0;
     border-radius: 10px;
@@ -171,6 +181,7 @@
 @media (max-width: 480px) {
     .popup-container {
         padding: 25px 15px;
+        min-height: auto;
     }
     .popup-body .danger {
         font-size: 13px;

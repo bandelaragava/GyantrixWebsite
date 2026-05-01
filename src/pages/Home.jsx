@@ -189,15 +189,9 @@ const Home = () => {
                 <div className="acrdt-column">
                     <h3>We are Collaborated & Accredited by</h3>
                     <div className="logo-static-grid">
-                        <div className="logo-item-static">
-                            <img src={getAssetUrl("/images/MCA.png")} alt="MCA" />
-                        </div>
-                        <div className="logo-item-static">
-                            <img src={msmeLogo} alt="MSME" />
-                        </div>
-                        <div className="logo-item-static">
-                            <img src={isoLogo} alt="ISO" />
-                        </div>
+                        <img src={getAssetUrl("/images/MCA.png")} alt="MCA" />
+                        <img src={msmeLogo} alt="MSME" />
+                        <img src={isoLogo} alt="ISO" />
                     </div>
                 </div>
 
@@ -206,15 +200,9 @@ const Home = () => {
                 <div className="acrdt-column">
                     <h3>Yet to Accredited by</h3>
                     <div className="logo-static-grid">
-                        <div className="logo-item-static">
-                            <img src={getAssetUrl("/images/nsdclogo.jpg")} alt="NSDC" />
-                        </div>
-                        <div className="logo-item-static">
-                            <img src={skillIndiaLogo} alt="Skill India" />
-                        </div>
-                        <div className="logo-item-static">
-                            <img src={getAssetUrl("/images/nasscom1.png")} alt="NASSCOM" />
-                        </div>
+                        <img src={getAssetUrl("/images/nsdclogo.jpg")} alt="NSDC" />
+                        <img src={skillIndiaLogo} alt="Skill India" />
+                        <img src={getAssetUrl("/images/nasscom1.png")} alt="NASSCOM" />
                     </div>
                 </div>
             </section>

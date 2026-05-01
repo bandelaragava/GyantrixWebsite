@@ -762,7 +762,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 2rem 5%;
+    padding: 6rem 5% 3rem; /* Increased top padding */
     gap: 1.2rem;
     margin-top: 0;
   }
@@ -1009,65 +1009,58 @@ form button {
 .acrdt-dual {
   display: flex;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
   background-color: white;
-  padding: 1.2rem 5%;
+  padding: 1rem 5%;
   margin-top: 1rem;
-  gap: 2rem;
-  flex-wrap: wrap;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
   border-bottom: 1px solid rgba(59, 198, 248, 0.1);
+  overflow-x: auto;
 }
 
 .acrdt-column {
-  flex: 1;
-  min-width: 300px; /* Reduced from 400px */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  gap: 1.2rem;
   padding: 0.5rem;
 }
 
 .acrdt-column h3 {
   color: #3bc6f8;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 .logo-static-grid {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-  width: 100%;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
 }
 
-.logo-item-static {
-  width: 150px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-}
-
-.logo-item-static img {
-  max-width: 100%;
-  max-height: 100%;
+.logo-static-grid img {
+  height: 60px; /* Increased from 45px */
+  max-width: 150px; /* Increased from 120px */
   object-fit: contain;
   filter: grayscale(0.2);
   transition: all 0.4s ease;
+  cursor: pointer;
 }
 
-.logo-item-static:hover img {
-  transform: scale(1.15);
+.logo-static-grid img:hover {
+  transform: scale(1.1);
   filter: grayscale(0);
 }
+
+/* .logo-item-static removed as wrappers were removed from Home.jsx */
 
 .acrdt-divider {
   width: 1px;
@@ -1075,36 +1068,41 @@ form button {
   margin: 0 1rem;
 }
 
-@media (max-width: 992px) {
-  .acrdt-column {
-    min-width: 45%;
+@media (max-width: 1200px) {
+  .acrdt-dual {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
 @media (max-width: 768px) {
+  .acrdt-dual {
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    gap: 2rem;
+  }
   .acrdt-column {
-    min-width: 100%;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  .acrdt-column h3 {
+    white-space: normal;
+    text-align: center;
   }
   .logo-static-grid {
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
-  .logo-item-static {
-    width: 100px;
-    height: 70px;
+  .logo-static-grid img {
+    height: 45px; /* Increased from 35px */
+    max-width: 130px; /* Increased from 100px */
   }
   .acrdt-divider {
-    display: none; /* Hide vertical line on stack */
-  }
-}
-
-@media (max-width: 480px) {
-  .logo-item-static {
-    width: 120px;
-    height: 80px;
-  }
-
-  .acrdt-column h3 {
-    font-size: 1.2rem;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #3bc6f8, transparent);
+    margin: 0 auto;
   }
 }
 

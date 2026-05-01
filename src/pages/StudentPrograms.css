@@ -603,7 +603,7 @@
 
 @media (max-width: 1024px) {
     .catalog-masterclass {
-        padding-top: 170px;
+        padding-top: 250px;
         /* Increased Tablet clearance */
     }
 
@@ -614,7 +614,7 @@
 
 @media (max-width: 768px) {
     .catalog-masterclass {
-        padding: 110px 5% 40px 5%;
+        padding: 220px 5% 40px 5%;
         /* Larger mobile spacing for Courses ONLY */
     }
 

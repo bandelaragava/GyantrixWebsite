@@ -36,11 +36,10 @@
     box-shadow: 0 0.15rem 0.625rem rgba(0, 0, 0, 0.1);
     flex-wrap: nowrap;
 
-    position: fixed;
+    position: relative;
     width: 100%;
     height: auto;
     min-height: 70px;
-    top: 0 !important;
     z-index: 1999;
     font-family: 'Outfit', sans-serif;
     letter-spacing: 0.02rem;
@@ -393,13 +392,14 @@
     color: #333;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .nav-search-container {
         max-width: none;
-        width: 100%;
-        order: 3;
-        margin: 8px 0 10px;
-        padding: 0 5%;
+        width: auto;
+        flex: 1;
+        order: 2;
+        margin: 0 10px;
+        padding: 0;
     }
 
     .search-results-dropdown {
@@ -408,25 +408,26 @@
     }
 
     .hamburger {
-        order: 2;
+        order: 3;
+        padding: 5px;
+        font-size: 24px;
+        flex-shrink: 0;
+        display: block !important;
     }
 
     .logo-heading-container {
         order: 1;
         gap: 0.5rem;
+        flex-shrink: 0;
     }
 
     .logo-heading-container img {
-        margin: 0.5rem;
-        width: 1.8rem;
+        margin: 0.2rem;
+        width: 1.5rem;
     }
 
     #gyantrix {
-        font-size: 1.2rem;
-    }
-
-    .hamburger {
-        display: block;
+        font-size: 1rem;
     }
 
     .navbar nav {
@@ -434,8 +435,8 @@
         flex-direction: column;
         width: 100vw;
         position: fixed;
-        top: 130px;
-        /* Below the logo + search bar */
+        top: 115px;
+        /* Below the single-line bar + logo + search bar */
         left: 0;
         background: white;
         padding: 10px 0;
@@ -511,7 +512,30 @@
     }
 }
 
-@media (min-width: 769px) {
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding-bottom: 15px;
+    }
+    
+    .logo-heading-container {
+        flex: 1;
+        order: 1;
+    }
+    
+    .hamburger {
+        order: 2;
+    }
+
+    .nav-search-container {
+        flex: 1 1 100%;
+        order: 3;
+        margin: 10px 0 0 0;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1025px) {
     .hamburger {
         display: none !important;
     }

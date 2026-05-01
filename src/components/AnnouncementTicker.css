@@ -1,0 +1,58 @@
+/* Announcement Bar Consolidation */
+.announcement-bar-container {
+    width: 100%;
+    min-height: 40px;
+    background: linear-gradient(90deg, #e64520, #ff6b4a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 20px;
+    position: relative;
+    z-index: 2100; /* Above navbar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.announcement-content {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.announcement-text {
+    color: #fff;
+    font-size: clamp(8px, 2.8vw, 14px); /* Dynamic scaling for all screens */
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    display: inline-block;
+    padding: 4px 0;
+}
+
+.main-warning {
+    font-weight: 800;
+    line-height: 1.6;
+}
+
+.sub-warning.highlight-box {
+    background: rgba(0, 0, 0, 0.25);
+    padding: 2px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 4px;
+    font-weight: 700;
+    color: #ffd700; /* Gold/Yellow for highlighting */
+    font-size: 0.9em;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 1024px) {
+    .announcement-bar-container {
+        padding: 8px 10px;
+        min-height: auto;
+    }
+    .announcement-text {
+        white-space: normal;
+        font-size: 11px;
+    }
+}

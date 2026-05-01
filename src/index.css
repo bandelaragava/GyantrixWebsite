@@ -21,18 +21,19 @@ body {
   font-family: 'Poppins', sans-serif;
   color: #333;
   line-height: 1.6;
-  padding-top: 65px;
-  /* Reduced to match navbar height */
+  padding-top: 110px;
+  /* Increased for static bar + navbar */
 }
 
 @media (max-width: 769px) {
   body {
     text-align: justify;
     text-justify: inter-word;
-    padding-top: 70px;
-    /* Aligned with desktop */
+  padding-top: 115px;
+    /* Adjusted for single-line announcement bar on mobile */
   }
 }
+
 
 #sparkleCanvas {
   position: fixed;
@@ -56,8 +57,13 @@ body {
 .site-header {
   font-family: "Poppins", sans-serif;
   color: #333;
-  position: relative;
-  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
 }
 
 /* === Top Bar === */
@@ -110,234 +116,9 @@ body {
 }
 
 /* === Navbar === */
-.site-header .navbar {
-  background: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.2rem 3%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0.15rem 0.625rem rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
-  position: fixed;
-  width: 100%;
-  height: auto;
-  min-height: 70px;
-  top: 0;
-  z-index: 1000;
-  transition: all 0.3s ease;
-  font-family: 'Roboto', 'Roboto Fallback';
-}
+/* Navbar styles are now managed in Navbar.css */
 
-.site-header .navbar img {
-  width: 3rem;
-  height: 3rem;
-  margin: 0.1rem;
-}
 
-.site-header .logo-heading-container {
-  display: flex;
-  align-items: center;
-  gap: 0rem;
-}
-
-.site-header .headingnames {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.15rem;
-}
-
-.site-header #gyantrix {
-  background: navy;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 0.3rem;
-}
-
-.site-header #academy {
-  color: rgb(19, 167, 220);
-  margin-top: -1rem;
-  margin-left: 2rem;
-}
-
-/* === Navbar Links === */
-.site-header .navbar nav a {
-  margin: 0 1rem;
-  color: #333;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.site-header .navbar nav a:hover,
-.site-header .dropdown button:hover {
-  color: #e64520;
-  transform: translateY(-2px);
-}
-
-/* === Dropdown === */
-.site-header .dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.site-header .drop-btn {
-  background: none;
-  border: none;
-  font: inherit;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.2rem;
-}
-
-.site-header .dropdown-content {
-  display: none;
-  position: absolute;
-  background: #fff;
-  flex-direction: column;
-  z-index: 1000;
-  top: 100%;
-  left: 0;
-  padding: 0.5rem 0;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.site-header .dropdown-content a {
-  display: block;
-  padding: 0.6rem 1rem;
-  font-weight: 400;
-  text-decoration: none;
-  color: #333;
-  transition: background 0.3s ease;
-}
-
-.site-header .dropdown-content a:hover {
-  background-color: #f0f0f0;
-}
-
-.site-header .dropdown.open .dropdown-content {
-  display: flex;
-}
-
-.site-header .dropdown .arrow {
-  margin-left: 0.3rem;
-  transition: transform 0.3s ease;
-}
-
-.site-header .dropdown.open .arrow {
-  transform: rotate(180deg);
-}
-
-/* === Mobile Navbar === */
-@media (max-width: 768px) {
-  .site-header .top-bar {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 10px 12px;
-    gap: 8px;
-  }
-
-  .site-header .top-left,
-  .site-header .top-right {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .site-header .navbar {
-    top: 0;
-  }
-
-  .site-header .hamburger {
-    display: block !important;
-    border: none;
-    color: #0c2d57;
-    font-size: 2rem;
-    padding: 0.3rem 0.6rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background 0.3s ease;
-  }
-
-  .site-header .navbar nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: #fff;
-    padding: 0.5rem 0;
-    border-top: 1px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .site-header .navbar nav.active {
-    display: flex;
-    animation: slideDown 0.4s ease forwards;
-  }
-
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-15px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .site-header .navbar nav a,
-  .site-header .dropdown {
-    padding: 0.8rem 1rem;
-    border-bottom: 1px solid #eee;
-    text-align: center;
-  }
-
-  .site-header .dropdown-content {
-    display: none;
-    flex-direction: column;
-    width: 80%;
-    margin: 0.3rem auto;
-    background: #f9f8fa;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  }
-
-  .site-header .dropdown.open .dropdown-content {
-    display: flex;
-    animation: slideDown 0.3s ease forwards;
-  }
-
-  .site-header .dropdown-content a {
-    padding: 0.6rem 1rem;
-    background-color: #f7f3fe;
-    margin: 0.1rem 0;
-    border-radius: 4px;
-  }
-
-  .site-header .dropdown-content a:hover {
-    background: #0c2d57;
-    color: #fff;
-  }
-}
-
-/* === Desktop Navbar === */
-@media (min-width: 769px) {
-  .site-header .hamburger {
-    display: none !important;
-  }
-
-  .site-header .navbar nav {
-    display: flex !important;
-    flex-direction: row;
-    position: static;
-    box-shadow: none;
-  }
-}
 
 
 .hero {
@@ -1239,7 +1020,7 @@ form button {
 
 .acrdt-column {
   flex: 1;
-  min-width: 400px;
+  min-width: 300px; /* Reduced from 400px */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1296,14 +1077,23 @@ form button {
 
 @media (max-width: 992px) {
   .acrdt-column {
+    min-width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .acrdt-column {
     min-width: 100%;
   }
-
+  .logo-static-grid {
+    gap: 1.5rem;
+  }
+  .logo-item-static {
+    width: 100px;
+    height: 70px;
+  }
   .acrdt-divider {
-    width: 60%;
-    height: 1px;
-    background: linear-gradient(to right, transparent, #3bc6f8, transparent);
-    margin: 1rem 0;
+    display: none; /* Hide vertical line on stack */
   }
 }
 
@@ -6426,7 +6216,7 @@ form button {
 
 @media (max-width: 768px) {
   .contact-page-container {
-    padding-top: 150px;
+    padding-top: 220px;
   }
 }
 

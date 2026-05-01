@@ -8,6 +8,7 @@ import FeaturesSection from '../components/FeaturesSection';
 import isoLogo from '../assets/ISO.png';
 import msmeLogo from '../assets/msme.png';
 import skillIndiaLogo from '../assets/skillindia.png';
+import PaymentPopup from '../components/PaymentPopup';
 
 const Home = () => {
     const [openFaq, setOpenFaq] = useState(null);
@@ -75,7 +76,7 @@ const Home = () => {
 
     return (
         <div className="home-page">
-            {/* ... hero and other sections ... */}
+            <PaymentPopup />
             {/* Hero Section */}
             <section className="hero">
                 <div className="hero-content">

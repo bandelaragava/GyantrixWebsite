@@ -2,13 +2,27 @@
 .site-header {
   font-family: "Poppins", sans-serif;
   color: #333;
+  position: relative;
+  width: 100%;
+  z-index: 2000;
+}
+
+.site-header.fixed-header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 2000;
-  display: flex;
-  flex-direction: column;
+  animation: smoothSlideDown 0.3s ease forwards;
+}
+
+@keyframes smoothSlideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0.9;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* === Top Bar === */
